@@ -1,9 +1,47 @@
-import styles from "./write.module.css"
+"use client";
+
+import Image from "next/image";
+import styles from "./write.module.css";
+import { useState } from "react";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.bubble.css";
 
 const writePage = () => {
+  const [open, setOpen] = useState(false);
+  const [value, setValue] = useState("");
   return (
-    <div className={styles.container}>writePage</div>
-  )
-}
+    <div className={styles.container}>
+      <input type="text" placeholder="Title" className={styles.input} />
+      <div className={styles.editor}>
+        <button className={styles.button} onClick={() => setOpen(!open)}>
+          <Image className={styles.image} src="/plus.png" alt="" width={16} height={16} />
+        </button>
+        {open && (
+          <div className={styles.add}>
+            <button className={styles.addButton}>
+              <Image className={styles.image}  src="/image_gray.png" alt="" width={16} height={16} />
+            </button>
+            <button className={styles.addButton}>
+              <Image className={styles.image}  src="/external.png" alt="" width={16} height={16} />
+            </button>
+            <button className={styles.addButton}>
+              <Image className={styles.image}  src="/video_gray.png" alt="" width={16} height={16} />
+            </button>
+          </div>
+        )}
 
-export default writePage
+        <ReactQuill
+          className={styles.textArea}
+          theme="bubble"
+          value={value}
+          onChange={setValue}
+          placeholder="Tell your story....."
+        />
+      </div>
+
+      <button className={styles.publish}>Publish</button>
+    </div>
+  );
+};
+
+export default writePage;
