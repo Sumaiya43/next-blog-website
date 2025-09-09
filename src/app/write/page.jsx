@@ -4,8 +4,7 @@ import Image from "next/image";
 import styles from "./write.module.css";
 import { useState } from "react";
 
-import Nextdynamic from "next/dynamic";
-const ReactQuill = Nextdynamic(() => import("react-quill"), { ssr: false });
+import dynamic from "next/dynamic";
 import "react-quill/dist/quill.bubble.css";
 
 import { useSession } from "next-auth/react";
@@ -13,6 +12,7 @@ import { useRouter } from "next/navigation";
 
 const WritePage = () => {
   const { status } = useSession();
+  const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
   const router = useRouter();
 
   const [open, setOpen] = useState(false);
