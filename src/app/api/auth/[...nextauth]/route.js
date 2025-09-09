@@ -1,5 +1,8 @@
+export const runtime = "nodejs";
+
 import prisma from "@/utils/connect";
-import { PrismaAdapter } from "@auth/prisma-adapter";
+// import { PrismaAdapter } from "@auth/prisma-adapter";
+import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import NextAuth, { getServerSession } from "next-auth";
 import GithubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
@@ -25,4 +28,4 @@ const handler = NextAuth(authOptions);
 export { handler as GET, handler as POST };
 
 
-export const getAuthSession = ()=> getServerSession(authOptions);
+//export const getAuthSession = ()=> getServerSession(authOptions);

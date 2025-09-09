@@ -1,6 +1,6 @@
 import prisma from "@/utils/connect";
 import { NextResponse } from "next/server";
-import { getAuthSession } from "../auth/[...nextauth]/route";
+import { getAuthSession } from "@/lib/auth";
 
 //GET ALL COMMENTS OF A POST
 
