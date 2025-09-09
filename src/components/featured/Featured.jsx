@@ -7,7 +7,7 @@ const Featured = () => {
   return (
     <div className={styles.container}>
       <div className={styles.title}>
-        <b>Hi, Mazeda here!</b> Discover my stories and creative ideas.
+        <b>Hi, Mazeda here!</b> Discover my stories and creative ideas
       </div>
       <div className={styles.post}>
         <div className={styles.imgContainer}>
@@ -15,13 +15,13 @@ const Featured = () => {
         </div>
         <div className={styles.textContainer}>
           <h1 className={styles.postTitle}>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti,
-            explicabo.
+            A blend of stories, code, and everyday inspiration
           </h1>
           <p className={styles.postDesc}>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi
-            molestiae assumenda unde at ducimus facere eius saepe omnis
-            exercitationem, totam dolores non sequi quis quaerat.
+            From cozy home moments to bold travel adventures, I share what I
+            learn as a developer, a mom, and a curious human. Grab a tea, scroll
+            slowly, and enjoy practical tips, honest reviews, and uplifting
+            visuals.
           </p>
           <button className={styles.button}>Read More</button>
         </div>
