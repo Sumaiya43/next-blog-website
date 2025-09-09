@@ -22,7 +22,7 @@ import Menu from "@/components/menu/Menu";
 
 
 export default function Home() {
-  return <main style={{padding:24}}>It works ✅</main>;
+  return <main style={{padding:24}}>It works ✅ test</main>;
 }
 
 
