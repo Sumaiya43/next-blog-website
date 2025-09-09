@@ -1,45 +1,73 @@
 "use client";
 
+export const dynamic = "force-dynamic";
+
 import Image from "next/image";
 import styles from "./write.module.css";
 import { useState } from "react";
-import ReactQuill from "react-quill";
+
+import Nextdynamic from "next/dynamic";
+const ReactQuill = Nextdynamic(() => import("react-quill"), { ssr: false });
 import "react-quill/dist/quill.bubble.css";
+
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
-const writePage = () => {
-  const {status} = useSession();
+const WritePage = () => {
+  const { status } = useSession();
   const router = useRouter();
 
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState("");
 
-  if(status === "loading"){
-    return <div className={styles.loading}>Loading...</div>
+  if (status === "loading") {
+    return <div className={styles.loading}>Loading...</div>;
   }
-  if(status === "unauthenticated"){
-    router.push("/")
+  if (status === "unauthenticated") {
+    router.push("/");
   }
-
 
   return (
     <div className={styles.container}>
       <input type="text" placeholder="Title" className={styles.input} />
       <div className={styles.editor}>
         <button className={styles.button} onClick={() => setOpen(!open)}>
-          <Image className={styles.image} src="/plus.png" alt="" width={16} height={16} />
+          <Image
+            className={styles.image}
+            src="/plus.png"
+            alt=""
+            width={16}
+            height={16}
+          />
         </button>
         {open && (
           <div className={styles.add}>
             <button className={styles.addButton}>
-              <Image className={styles.image}  src="/image_gray.png" alt="" width={16} height={16} />
+              <Image
+                className={styles.image}
+                src="/image_gray.png"
+                alt=""
+                width={16}
+                height={16}
+              />
             </button>
             <button className={styles.addButton}>
-              <Image className={styles.image}  src="/external.png" alt="" width={16} height={16} />
+              <Image
+                className={styles.image}
+                src="/external.png"
+                alt=""
+                width={16}
+                height={16}
+              />
             </button>
             <button className={styles.addButton}>
-              <Image className={styles.image}  src="/video_gray.png" alt="" width={16} height={16} />
+              <Image
+                className={styles.image}
+                src="/video_gray.png"
+                alt=""
+                width={16}
+                height={16}
+              />
             </button>
           </div>
         )}
@@ -58,4 +86,4 @@ const writePage = () => {
   );
 };
 
-export default writePage;
+export default WritePage;
