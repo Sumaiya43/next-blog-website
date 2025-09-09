@@ -1,3 +1,4 @@
+"use client";
 import Featured from "@/components/featured/Featured";
 import styles from "./homepage.module.css";
 import CategoryList from "@/components/categoryList/CategoryList";
@@ -19,7 +20,7 @@ import Menu from "@/components/menu/Menu";
  
 // }
 
-"use client";
+
 export default function Home() {
   return <main style={{padding:24}}>It works ✅</main>;
 }
