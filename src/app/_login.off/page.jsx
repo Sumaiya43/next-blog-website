@@ -1,5 +1,6 @@
 "use client"
 
+export const dynamic = "force-dynamic";
 import { signIn, useSession } from "next-auth/react"
 import styles from "./loginPage.module.css"
 
