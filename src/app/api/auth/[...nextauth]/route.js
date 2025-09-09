@@ -26,7 +26,7 @@
 
 // export { handler as GET, handler as POST };
 
-// //export const getAuthSession = ()=> getServerSession(authOptions);
+
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -49,3 +49,5 @@ const handler = NextAuth({
 });
 
 export { handler as GET, handler as POST };
+
+export const getAuthSession = ()=> getServerSession(authOptions);
