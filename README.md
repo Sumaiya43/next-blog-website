@@ -1,38 +1,62 @@
-<<<<<<< HEAD
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+📖 Next Blog Website
 
-## Getting Started
+A full-stack blog platform built with the Next.js App Router, featuring authentication, categories, dynamic posts, and responsive UI.
+Deployed on Vercel with Prisma + MongoDB Atlas as the backend.
 
-First, run the development server:
+🌐 Live Demo: next-blog-website-vq6n.vercel.app
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+✨ Features:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+      🔐 Authentication
+          Google, GitHub, and Facebook sign-in via NextAuth.js
+          Session management with SessionProvider
+          
+      📝 Blog Posts
+          Create, edit, and display posts
+          Rich text editor (ReactQuill)
+          Pagination support
+      
+      📂 Categories
+          Filter posts by category
+          Category list rendered dynamically from DB
+      
+      💬 Comments
+          Add and display comments for posts
+          Authenticated users only
+      
+     📱 Responsive Design
+          Mobile-first UI using CSS Modules + custom styles
+          Clean layout with Navbar, Footer, and reusable components
+      
+    ⚡ Server/Client Rendering
+          Mix of Server Components for data fetching (Prisma)
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+🛠️ Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+Frontend: Next.js 13+ App Router
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Backend: Prisma ORM + MongoDB Atlas
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Auth: NextAuth.js
+  with Google/GitHub/Facebook providers
+  Styling: CSS Modules (scoped styling per component)
+  Deployment: Vercel
 
-## Deploy on Vercel
+Other Tools:
+  ReactQuill for rich text editing
+  Suspense for streaming data
+  Dynamic routes (/blog?cat=..., /posts/[slug])   
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-=======
-# next-blog-website
->>>>>>> 19876bf7710589b9c4bebf78167f51893fbbbc9b
+📌 Roadmap / Future Enhancements
+
+  🌟 Add image upload for posts
+
+  🔍 Improve SEO with dynamic metadata
+
+  ❤️ Like/Save posts feature
+
+  👤 User profile page                                                                                                                                                                   
+
