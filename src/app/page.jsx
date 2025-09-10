@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import Featured from "@/components/featured/Featured";
 import styles from "./homepage.module.css";
 import CategoryList from "@/components/categoryList/CategoryList";
@@ -11,7 +13,7 @@ export default function Home({ searchParams }) {
       <Featured />
       <CategoryList />
       <div className={styles.content}>
-        <CardList page={page} />
+        <CardList page={page} />   
         <Menu />
       </div>
     </div>
