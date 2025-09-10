@@ -7,7 +7,7 @@ import { getBaseUrl } from "@/lib/baseUrl";
 
 const getData = async (page, cat) => {
   const res = await fetch(
-    `/api/posts?page=${page}&cat=${cat || ""}`,
+    `${getBaseUrl()}/api/posts?page=${page}&cat=${cat || ""}`,
     {
       cache: "no-store",
     }
