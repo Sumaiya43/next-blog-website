@@ -33,12 +33,12 @@ const AuthLinks = () => {
           <Link href="/">Homepage</Link>
           <Link href="/">Contact</Link>
           <Link href="/">About</Link>
-          {status === "nonauthenticated" ? (
+          {status === "unauthenticated" ? (
             <Link href="/login">Login</Link>
           ) : (
             <>
               <Link href="/write">Write</Link>
-              <span className={styles.links} onClick={signOut}>Logout</span>
+                <span className={styles.links} onClick={()=>signOut({callbackUrl: "/"})}>Logout</span>
             </>
           )}
         </div>
