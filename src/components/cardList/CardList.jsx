@@ -18,7 +18,7 @@ const getData = async (page, cat) => {
 
   // return res.json();
 
-   const url = `/api/posts?page=${page}&cat=${cat || ""}`;
+   const url = `/api/posts?page=${page}&cat=${cat ?? ""}`;
 
   try {
     const res = await fetch(url, {
