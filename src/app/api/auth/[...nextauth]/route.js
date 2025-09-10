@@ -31,7 +31,7 @@ export const dynamic = "force-dynamic";
 
 import prisma from "@/utils/connect";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
-import NextAuth from "next-auth";
+import NextAuth, { getServerSession } from "next-auth";
 import GitHubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
 
