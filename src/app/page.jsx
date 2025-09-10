@@ -1,4 +1,4 @@
-export const dynamic = "force-dynamic";
+
 
 import Featured from "@/components/featured/Featured";
 import styles from "./homepage.module.css";
