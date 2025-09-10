@@ -5,13 +5,24 @@ import Link from "next/link";
 import Image from "next/image";
 
 const getData = async () => {
-  const res = await fetch("/api/categories", {
-    cache: "no-store",
-  });
-  if (!res.ok) {
-    throw Error("Failed");
+  // const res = await fetch("/api/categories", {
+  //   cache: "no-store",
+  // });
+  // if (!res.ok) {
+  //   throw Error("Failed");
+  // }
+  // return res.json();
+  try {
+    const res = await fetch("/api/categories", {
+      cache: "no-store",
+      next: { revalidate: 0 },
+    });
+    if (!res.ok) return [];
+    return await res.json();
+  } catch (e) {
+    console.error("CategoryList fetch failed:", e);
+    return [];
   }
-  return res.json();
 };
 
 

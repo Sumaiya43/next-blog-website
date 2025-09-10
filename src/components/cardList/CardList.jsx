@@ -6,17 +6,41 @@ import Card from "../card/Card";
 import { getBaseUrl } from "@/lib/baseUrl";
 
 const getData = async (page, cat) => {
-  const res = await fetch(
-    `/api/posts?page=${page}&cat=${cat || ""}`,
-    {
-      cache: "no-store",
-    }
-  );
-  if (!res.ok) {
-    throw Error("Failed");
-  }
+  // const res = await fetch(
+  //   `/api/posts?page=${page}&cat=${cat || ""}`,
+  //   {
+  //     cache: "no-store",
+  //   }
+  // );
+  // if (!res.ok) {
+  //   throw Error("Failed");
+  // }
 
-  return res.json();
+  // return res.json();
+
+   const url = `/api/posts?page=${page}&cat=${cat ?? ""}`;
+
+  try {
+    const res = await fetch(url, {
+      cache: "no-store",
+      next: { revalidate: 0 },
+    });
+
+    if (!res.ok) {
+      console.error("CardList fetch non-OK:", res.status, url);
+      return { posts: [], count: 0 };
+    }
+
+    const data = await res.json();
+   
+    if (!data || !Array.isArray(data.posts)) {
+      return { posts: [], count: 0 };
+    }
+    return data;
+  } catch (e) {
+    console.error("CardList fetch failed:", e);
+    return { posts: [], count: 0 };
+  }
 };
 
 const CardList = async ({ page, cat }) => {
